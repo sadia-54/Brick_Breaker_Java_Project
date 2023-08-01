@@ -2,6 +2,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -64,14 +65,55 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener {
         g.setColor(Color.red);
         g.fillOval(ballposX, ballposY, 20, 20);
     }
-    public void keyPressed(KeyEvent e) {
 
+    // moving the paddle
+    public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+            if (playerX >= 780) {
+                playerX = 780;
+            } else {
+                moveRight();
+            }
+        }
+
+        if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+            if (playerX < 30) {
+                playerX = 30;
+            } else {
+                moveLeft();
+            }
+        }
+        if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+            if (!play) {
+                play = true;
+                ballposX = 120;
+                ballposY = 350;
+                ballXdir = -1;
+                ballYdir = -2;
+                playerX = 310;
+                score = 0;
+                totalBricks = 60;
+                map = new GenerateMap(4, 15);
+
+                repaint();
+            }
+        }
     }
 
     public void keyReleased(KeyEvent e) {
     }
 
     public void keyTyped(KeyEvent e) {
+    }
+
+    public void moveRight() {
+        play = true;
+        playerX += 20;
+    }
+
+    public void moveLeft() {
+        play = true;
+        playerX -= 20;
     }
 
     public void actionPerformed(ActionEvent e) {
