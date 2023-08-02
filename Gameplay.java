@@ -169,6 +169,21 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener {
                     }
                 }
             }
+            ballposX += ballXdir;
+            ballposY += ballYdir;
+
+            if (ballposX < 0) {
+                ballXdir = -ballXdir;
+            }
+            if (ballposY < 0) {
+                ballYdir = -ballYdir;
+            }
+            if (ballposX > 860) {
+                ballXdir = -ballXdir;
+            }
+
+            repaint();
+
         }
     }
 }
