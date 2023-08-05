@@ -8,6 +8,8 @@ public class GenerateMap
     public int map[][];
     public int brickWidth;
     public int brickHeight;
+    private int totalBricks;
+
 
     public GenerateMap (int row, int col)
     {
@@ -22,6 +24,7 @@ public class GenerateMap
 
         brickWidth = 740/col;
         brickHeight = 150/row;
+        totalBricks = 60;
     }
 
     public void draw(Graphics2D g)
@@ -47,5 +50,11 @@ public class GenerateMap
     public void setBrickValue(int value, int row, int col)
     {
         map[row][col] = value;
+        totalBricks -= 1;
     }
+    public int getTotalBricks() {
+        return totalBricks;
+
+    }
+
 }
