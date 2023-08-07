@@ -1,2 +1,2 @@
 # Brick_Breaker_Java_Project
-It is a simple brick breaker game developed using JAVA 
+This game consists of two levels. In level 1, players aim to break bricks using a paddle and a ball. Each broken brick adds 5 points to the initial score. Once level 1 is completed, players progress to level 2, where the score resets to zero. In level 2, the objective remains the same: break all bricks to proceed. After finishing level 2, the game displays the total score, summing up the points from both levels. Use the paddle to bounce the ball, breaking bricks to score points. Aim for a high total score by mastering both levels! Enjoy the challenge and have fun!
