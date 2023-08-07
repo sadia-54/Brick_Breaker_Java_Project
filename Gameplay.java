@@ -101,7 +101,7 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener {
             if(currentLevel == 1){
                 g.drawString("Game Over, Scores: " + score , 330, 300);}
             else
-            {g.drawString("Game Over, Scores: " + (score+600) , 330, 300);}
+            {g.drawString("Game Over, Scores: " + (score+300) , 330, 300);}
 
             g.setColor(Color.RED);
             g.setFont(new Font("serif", Font.BOLD, 20));
